@@ -1,59 +1,53 @@
-* {
-  border: black solid 2px;
-
-}
-
-html {
-  margin: 0%;
-  padding: 0%;
-  width: 200vh;
-  background-color: white;
-}
-
 .App {
   display: flex;
-  border: red solid 1px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
-
+  background-image: linear-gradient(0deg, white 40%, indigo );
 }
 
 .containerFather {
-  display: flex;
-  flex-direction: row;
-  border: red solid 1px;
+  display: grid;
+  grid-template-columns: 404px auto;
+  grid-template-rows: 126px 430px 14px;
   width: auto;
   height: auto;
-  justify-content: center;
-  align-items: center;
-
+  z-index: 0;
 }
 
-
 .leftSide {
+  grid-column: 1;
+  grid-row: 1/4;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   height: 566px;
   width: 404px;
-  border: rgb(27, 27, 30) solid 2px;
-  border-radius: 30px;
-  border-top-right-radius: 10px;
+  border: black solid 2px;
+  border-radius: 30px 10px 13px 30px;
   background-color: rgb(146, 4, 42);
 }
 
 .rightSide {
-  height: 501px;
-  width: 338px;
-  border-bottom-right-radius: 20px;
-  border: rgb(162, 255, 0) solid 2px;
+  grid-column: 2;
+  grid-row: 2/3;
+  height: 100%;
+  width: 339px;
+  border-radius: 0px 4px 20px 0px;
+  border: black solid 2px;
+  border-left: none;
+  background-color: crimson;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 /* lado izquierdo superior */
 .topLeftSide {
+  border: black solid 2px;
   border-top: none;
   border-right: none;
   border-bottom: none;
@@ -71,6 +65,7 @@ html {
 }
 
 .whiteCircle {
+  border: black solid 2px;
   background-color: white;
   width: 90px;
   height: 90px;
@@ -225,10 +220,9 @@ html {
 
 /* Lado izquierdo superior */
 
-
 /* Lado izquierdo inferior */
-
 .bottomLeftSide {
+  border: black solid 2px;
   background-color: crimson;
   width: 337px;
   height: 448px;
@@ -239,21 +233,27 @@ html {
   justify-content: center;
   border-right: none;
 }
+
 .shadowBottom {
   width: 100%;
   height: 17px;
-  background-color:  rgb(146, 4, 42);
+  background-color: rgb(146, 4, 42);
   position: relative;
   top: -8px;
-  border: none;
   border-bottom: black solid 2px;
   border-top-left-radius: 10px;
 }
 
-.paddingRightSide {
+.paddingLeftSide {
+  border: black solid 2px;
   width: 317px;
   height: 410px;
   border-radius: 30px 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: crimson;
 }
 
 .hingeAndBottom {
@@ -261,7 +261,9 @@ html {
   display: flex;
   flex-direction: row;
 }
+
 .hinge {
+  border: black solid 2px;
   width: 50px;
   height: 458px;
   background-color: crimson;
@@ -269,13 +271,394 @@ html {
   border-right: none;
   border-bottom: none;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
+
 .hingeBottom {
+  border: black solid 2px;
   width: 53px;
   height: 20px;
   border-radius: 100%;
   position: relative;
   top: 4px;
-  background-color:  rgb(146, 4, 42);
+  background-color: rgb(146, 4, 42);
+}
+
+/* principal screen  */
+.outerEdge {
+  width: 295px;
+  height: 262px;
+  background-image: linear-gradient(45deg, transparent 0% 9%, black 0% 100%);
+  z-index: 0;
+  border-radius: 30px 30px 30px 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outerEdge::before {
+  content: "";
+  position: absolute;
+  border-radius: 30px 30px 30px 0px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  right: 0px;
+  top: 0px;
+  background-image: linear-gradient(45deg, transparent 0% 9%, rgb(141, 137, 136) 0% 100%);
+  z-index: 1;
+}
+
+.outerEdge::after {
+  content: "";
+  position: absolute;
+  border-radius: 30px 30px 30px 0px;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  right: 0px;
+  top: 0px;
+  background-image: linear-gradient(45deg, transparent 0% 9%, black 0% 100%);
+  z-index: 2;
+}
+
+.innerEdge {
+  background-image: linear-gradient(45deg, transparent 0% 9%, rgb(227, 225, 226) 0% 100%);
+  border-radius: 30px 30px 30px 0px;
+  z-index: 3;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  border-right: black solid 2px;
+  border-top: black solid 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenLight {
+  border: black solid 2px;
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+  background-color: rgb(216, 7, 64);
+}
+
+.principalScreen {
+  border: black solid 2px;
+  border-radius: 8%;
+  width: 237px;
+  height: 167px;
+  background-color: white;
+  background: url("../public/img/back-ground-principal.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principalScreen img {
+  width: 60px;
+  height: 70px;
+  border: none;
+  background: none;
+}
+
+.screenLightBig {
+  border: black solid 2px;
+  border-radius: 100%;
+  width: 27px;
+  height: 27px;
+  background-color: rgb(216, 7, 64);
+}
+
+.horn {
+  width: 73px;
+  height: 32px;
+  background-color: rgb(227, 225, 226);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hornHole {
+  width: auto;
+  height: 4px;
+  border-radius: 100px;
+  background-color: rgb(43, 43, 43);
+}
+
+.rowOne {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 60px;
+  height: 31px;
+}
+
+.rowTwo {
+  display: flex;
+  width: 237px;
+  height: 167px;
+}
+
+.rowThree {
+  display: flex;
+  width: 190px;
+  height: 55px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* principal screen */
+
+/* area buttons */
+.areaButtons {
+  width: 295px;
+  height: 119px;
+  display: grid;
+  grid-template-columns: 48px 126px 93px;
+  justify-content: center;
+  column-gap: 6px;
+}
+
+.cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.buttonsRightLeft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 87px;
+  height: 23px;
+  position: absolute;
+  border-radius: 3px;
+  background-color: rgb(35, 52, 42);
+  z-index: 1;
+}
+
+.buttonsUpDown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 23px;
+  height: 87px;
+  position: absolute;
+  border-radius: 3px;
+  background-color: rgb(35, 52, 42);
+  z-index: 1;
+}
+
+.crossButtons {
+  border: none;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.outerButtonsRightLeft {
+  width: 91px;
+  height: 27px;
+  border-radius: 7px 5px 8px 5px;
+  z-index: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+  top: 3px;
+  left: 0px;
+  margin: auto;
+  background-color: black;
+}
+
+.outerButtonsUpDown {
+  border: black solid 2px;
+  width: 24px;
+  height: 88px;
+  position: absolute;
+  border-radius: 8px 4px 7px 6px;
+  z-index: 0;
+  top: 4px;
+  left: 0px;
+  bottom: 0px;
+  right: 3px;
+  margin: auto;
+  background: black;
+}
+
+.centerArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screenEvolution {
+  border: black solid 2px;
+  border-radius: 6px;
+  background-color: rgb(92, 196, 126);
+  width: 100%;
+  height: 61px;
+}
+
+.buttonInformation {
+  background-color: rgb(35, 52, 42);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  box-shadow: -1px 2px 0px 1px black;
+  cursor: pointer;
+  border: solid;
+}
+
+.buttonsPower {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.turnOn {
+  background-color: rgb(15, 110, 130);
+  border: black solid 1px;
+  border-radius: 30px;
+  width: 52px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.turnOff {
+  background-color: rgb(204, 4, 33);
+  border: black solid 1px;
+  border-radius: 30px;
+  width: 52px;
+  height: 10px;
+  cursor: pointer;
+}
+
+/* left side */
+
+/* right side */
+.borderShadowRight {
+  border: black solid 2px;
+  width: 317px;
+  height: 410px;
+  background-color: rgb(146, 4, 42);
+  border-radius: 10px 4px 20px 0px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.paddingRightSide {
+  background-color: crimson;
+  border: black solid 2px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0px 4px 6px 0px;
+  width: 310px;
+  height: 403px;
+  display: grid;
+  grid-template-columns: 133px 133px;
+  grid-template-rows: 111px 111px 59px 31px;
+  justify-content: center;
+  align-content: center;
+  row-gap: 10px;
+  table-layout: auto;
+}
+
+.screenInformation {
+  grid-column: 1/3;
+  border-radius: 5px;
+  border: black solid 2px;
+  background-color: rgb(7, 65, 53);
+  width: auto;
+  height: auto;
+}
+
+.viewPokemons {
+  grid-column: 1/3;
+  border-radius: 8px 5px 4px 5px;
+  border: black solid 2px;
+  border-left: black solid 4px;
+  border-right: 1px;
+  background-color: rgb(34, 196, 234);
+  width: auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 55px 55px;
+  box-shadow: 3px -4px 0px 0px rgb(87, 125, 190) inset;
+}
+
+.templateViewPokemons {
+  border: black solid 2px;
+  border-left: none;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.templateViewPokemons img {
+  width: 80%;
+  height: 80%;
+}
+
+.templateViewPokemons p {
+  position: absolute;
+  top: -12px;
+  right: 1px;
+  font-size: 10px;
+  font-weight: bolder;
+}
+
+.dangerousPokemon {
+  background-color: rgb(227, 225, 226);
+  width: 106px;
+  height: 55px;
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 53px 53px;
+  grid-template-rows: 55px;
+  align-self: flex-start;
+  border: black solid 2px;
+  border-left: black solid 4px;
+  border-right: 1px;
+  border-radius: 8px 5px 4px 5px;
+  box-shadow: 3px -4px 0px 0px rgb(141, 137, 136) inset;
+}
+
+.thirdRowRightSide {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  justify-self: start;
+}
+
+
+
+.inputSearchId {
+  background-color: rgb(7, 65, 53);
+  border-radius: 5px;
+  border: black solid 2px;
+  justify-self: start;
+  width: 120px;
+}
+
+.inputSearchName {
+  border-radius: 5px;
+  border: black solid 2px;
+  justify-self: end;
+  width: 120px;
+  background-color: rgb(7, 65, 53);
 }
